@@ -1,0 +1,27 @@
+# Artistic Styles
+oil painting
+watercolor
+digital art
+pencil sketch
+charcoal drawing
+
+# Photography Styles
+photorealistic
+cinematic
+vintage photo
+polaroid
+black and white
+
+# Art Movements
+impressionist
+renaissance
+baroque
+art nouveau
+cyberpunk
+
+# Popular Styles
+anime style
+cartoon style
+comic book style
+pixel art
+3D render

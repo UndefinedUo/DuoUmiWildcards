@@ -1,0 +1,21 @@
+# Basic Colors
+red
+blue
+green
+yellow
+purple
+orange
+pink
+black
+white
+
+# Color Descriptions
+vibrant colors
+muted colors
+pastel colors
+monochromatic
+warm tones
+cool tones
+earth tones
+neon colors
+jewel tones

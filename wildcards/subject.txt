@@ -1,0 +1,20 @@
+# Portrait Subjects
+beautiful woman
+handsome man
+elegant lady
+young boy
+old wizard
+
+# Animals
+cute cat
+loyal dog
+majestic horse
+wise owl
+playful fox
+
+# Fantasy
+elf warrior
+dwarf blacksmith
+fairy princess
+dragon knight
+magical unicorn

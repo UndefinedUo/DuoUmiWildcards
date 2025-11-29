@@ -1,0 +1,23 @@
+# Emotional Moods
+happy
+sad
+melancholic
+joyful
+serene
+peaceful
+angry
+contemplative
+mysterious
+romantic
+
+# Atmospheric Moods
+dramatic
+ethereal
+dreamy
+haunting
+whimsical
+dark
+bright
+moody
+atmospheric
+cinematic

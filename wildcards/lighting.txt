@@ -1,0 +1,20 @@
+# Lighting Types
+soft lighting
+dramatic lighting
+natural lighting
+studio lighting
+golden hour
+blue hour
+candlelight
+neon lights
+rim lighting
+backlit
+
+# Lighting Moods
+moody lighting
+ethereal glow
+harsh shadows
+dappled sunlight
+volumetric lighting
+god rays
+cinematic lighting
