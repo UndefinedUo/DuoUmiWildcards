@@ -1,0 +1,31 @@
+# --- SOLO SHOTS (Subject Focus) ---
+# Standard portrait
+a focused portrait of __character_build__, looking at viewer, __poses_solo__
+# Environmental wide shot
+a wide angle shot of __character_build__, __poses_solo__, small in frame
+# Close up detail
+extreme close-up of __character_build__, detailed eyes, macro photography
+# Action shot
+dynamic angle of __character_build__, action pose, {jumping|running|fighting|casting a spell}, motion blur
+
+# --- DUO SHOTS (Interaction) ---
+# The Contrast (Two different people)
+two people in frame, __character_build__ standing next to __character_build__, __poses_duo__
+# The Mirror (Two similar people)
+twin subjects, __character_build__ and another identical subject, __poses_duo__, symmetry
+# The Confrontation
+a tense scene featuring __character_build__ facing off against __character_build__, fighting stance, {depth of field|bokeh}
+# The Romance/Intimacy
+an intimate shot of __character_build__ hugging __character_build__, soft focus, emotional atmosphere
+
+# --- GROUP SHOTS (Crowds & Squads) ---
+# The Squad (3-5 distinct people)
+a team of __3-5$$character_build__, standing in formation, __poses_group__, cinematic composition
+# The Crowd (Background filler)
+__character_build__ standing in a crowded room, surrounded by silhouettes of people, busy atmosphere
+# The Army
+an army of hundreds of __character_build__, marching in unison, epic scale, aerial view
+
+# --- SCENE VARIABLES (Random Mix) ---
+# This line is a "Wildcard" itself - 10% chance of no people, just scenery
+{0-1$$__character_build__}, empty scene, atmospheric lighting
