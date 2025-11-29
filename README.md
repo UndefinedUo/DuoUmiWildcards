@@ -11,7 +11,7 @@ A custom node for ComfyUI that randomly feeds wildcards from `.txt` files into y
 
 2. Clone or copy this repository:
    ```
-   git clone https://github.com/UndefinedUo/DuoUmiWildcards.git
+   git clone https://github.com/yourusername/DuoUmiWild.git
    ```
 
 3. Restart ComfyUI
@@ -89,14 +89,54 @@ The seed parameter ensures reproducible results:
 - Different seed = different random selections
 - Connect to your KSampler's seed for consistent generations
 
+### Nested Folder Support
+
+Organize wildcards in subfolders for better organization:
+
+```
+wildcards/
+├── characters/
+│   ├── heroes.txt
+│   └── villains.txt
+└── environments/
+    ├── indoor.txt
+    └── outdoor.txt
+```
+
+Use with folder path:
+```
+__characters/heroes__ fighting __characters/villains__ in __environments/indoor__
+```
+
+Or just use the filename (ignores folder structure):
+```
+__heroes__ vs __villains__
+```
+
+### Recursive/Nested Wildcards
+
+Wildcard files can contain other wildcards that will be expanded:
+
+**wildcards/combo.txt:**
+```
+__subject__ in __style__
+__quality__ portrait
+```
+
+Using `__combo__` will expand the wildcards inside!
+
 ## Node Inputs
 
 - **text**: Your prompt with wildcards in `__filename__` format
 - **seed**: Random seed for reproducible wildcard selection (0 to max int)
+- **autorefresh**:
+  - **No** (default): Cache wildcard files for faster processing
+  - **Yes**: Reload files each time (slower, but see edits immediately)
 
 ## Node Outputs
 
 - **processed_text**: Your prompt with all wildcards replaced with random selections
+- **Preview Display**: The node displays the processed text directly in the UI for easy viewing
 
 ## Examples
 
@@ -133,7 +173,10 @@ dramatic, moody portrait of elegant woman, oil painting, renaissance style, soft
 - ✅ Seeded randomization for reproducibility
 - ✅ Comment support in wildcard files (lines starting with #)
 - ✅ Inline comment removal
-- ✅ Nested wildcard support
+- ✅ Recursive/nested wildcard support (wildcards within wildcards)
+- ✅ Nested folder organization for wildcard files
+- ✅ Text preview display directly in the node
+- ✅ File caching with optional auto-refresh
 - ✅ Automatic comma formatting
 - ✅ Clean output (removes extra commas and whitespace)
 

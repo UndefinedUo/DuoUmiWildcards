@@ -1,0 +1,13 @@
+# Fantasy Heroes
+brave knight
+noble warrior
+wise wizard
+skilled archer
+cunning rogue
+
+# Modern Heroes
+superhero
+detective
+scientist
+adventurer
+explorer

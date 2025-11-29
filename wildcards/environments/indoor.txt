@@ -1,0 +1,9 @@
+# Interior Locations
+grand castle hall
+cozy library
+dark dungeon
+modern office
+futuristic laboratory
+ancient temple interior
+medieval tavern
+gothic cathedral

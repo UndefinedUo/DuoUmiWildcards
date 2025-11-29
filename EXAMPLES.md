@@ -266,9 +266,9 @@ dragon
 
 This makes "cat" 3x more likely than "dragon".
 
-### 3. Nested Categories
+### 3. Nested Folder Organization
 
-Organize wildcards by category:
+Organize wildcards by category using subfolders:
 
 ```
 wildcards/
@@ -280,9 +280,41 @@ wildcards/
     outdoor.txt
 ```
 
-Then reference: `__characters/heroes__`
+Then reference with full path: `__characters/heroes__`
 
-### 4. Seasonal Wildcards
+Or just use the filename (it will find it): `__heroes__`
+
+**Example:**
+```
+__characters/heroes__ vs __characters/villains__ in __environments/indoor__
+```
+
+### 4. Recursive Wildcards
+
+Create wildcard files that reference other wildcards:
+
+**wildcards/combo_scene.txt:**
+```
+__subject__ in a __environments/indoor__
+__quality__ __style__ artwork
+__1-2$$mood__ scene with __lighting__
+```
+
+**Input:**
+```
+__combo_scene__
+```
+
+**Result:**
+The node will expand `__combo_scene__`, then expand all wildcards within it recursively!
+
+### 5. Auto-Refresh for Live Editing
+
+When creating or editing wildcard files:
+- Set **autorefresh** to **Yes** to see changes immediately
+- Set to **No** for faster performance (caches files)
+
+### 6. Seasonal Wildcards
 
 Create seasonal variations:
 
@@ -290,7 +322,7 @@ Create seasonal variations:
 
 Switch between them based on your needs.
 
-### 5. Quality Tiers
+### 7. Quality Tiers
 
 Create different quality presets:
 

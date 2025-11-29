@@ -1,0 +1,7 @@
+# This file demonstrates nested wildcards
+# Each line contains another wildcard that will be expanded
+
+a __subject__ in __style__
+__quality__ portrait
+__lighting__ scene with __colors__
+__1-2$$mood__ atmosphere

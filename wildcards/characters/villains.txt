@@ -1,0 +1,12 @@
+# Fantasy Villains
+dark sorcerer
+evil dragon
+necromancer
+shadow assassin
+corrupt lord
+
+# Modern Villains
+mad scientist
+criminal mastermind
+cyborg villain
+alien invader
