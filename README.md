@@ -11,7 +11,7 @@ A custom node for ComfyUI that randomly feeds wildcards from `.txt` files into y
 
 2. Clone or copy this repository:
    ```
-   git clone https://github.com/yourusername/DuoUmiWild.git
+   git clone https://github.com/UndefinedUo/DuoUmiWildcards.git
    ```
 
 3. Restart ComfyUI
