@@ -1,0 +1,509 @@
+nsfw:
+    # Prompt all actions
+    prompt-all:
+        - >-
+          {__nsfw/prompt-solo__|__nsfw/prompt-man-woman__|__nsfw/prompt-women__|__nsfw/two-women-one-man__}
+    # Prompt solo actions
+    prompt-solo:
+        - >-
+            {__nsfw/emotion__, |}{__nsfw/skin-effect__, |} {__nsfw/sleeping__|__nsfw/solo/acrobatic__|__nsfw/solo/close-up__|__nsfw/solo/facial__|__nsfw/solo/front__|__nsfw/solo/side__|__nsfw/solo/behind__|__nsfw/bdsm/solo__}
+    # Prompt actions between a man and a woman
+    prompt-man-woman:
+        - >-
+            {__nsfw/emotion__, |}{__nsfw/skin-effect__, |} 
+            {__nsfw/bdsm/man-woman__|__nsfw/blowjob__|__nsfw/footjob__|__nsfw/vaginal/*__|__nsfw/anal/*__}
+    # Prompt actions between two women.
+    prompt-women:
+        - >-
+            {__nsfw/emotion__, |}{__nsfw/skin-effect__, |} 
+            {__nsfw/two-women__|__nsfw/three-women__}
+    # Prompt mixed combinations
+    prompt-mix:
+        - >-
+          {__nsfw/emotion__, |}{__nsfw/skin-effect__, |} 
+          __nsfw/camera-position__, 
+          {__nsfw/action__| {anal|vaginal} 
+          __nsfw/accessory__}, 
+          {__nsfw/skin-effect__, |}, 
+          {__nsfw/hairiness__,|} 
+          __nsfw/breasts__, {uncovered breasts, |} 
+          __nsfw/fluids__, {__nsfw/facial-fluids__, |} 
+          {__nsfw/lighting__|}
+    
+    sleeping:
+        - >-
+            __nsfw/woman__, sleeping {and lying on her side|spreaded legs}, parted lips, __nsfw/breasts__, narrow waist, {wide hips,|} __nsfw/fluids__, {closed eyes,|} __nsfw/pussy__, (medium full shot)
+        - >-
+            __nsfw/woman__, sleeping and lying on her side, from side, parted lips, {medium|large} ass, narrow waist, __nsfw/fluids__, {closed eyes,|}, __nsfw/pussy__, anus, __nsfw/ass__, (medium full shot), high angle
+        - >-
+            __nsfw/woman__, sleeping {and lying|} on her side, from side, parted lips, __nsfw/breasts__, narrow waist, __nsfw/fluids__, {closed eyes,|} __nsfw/pussy__, anus, __nsfw/ass__, (medium full shot), high angle, full body
+        - >-
+            __nsfw/woman__, sleeping and laying on her stomach, from behind, parted lips, {medium|large} ass, narrow waist, __nsfw/fluids__, __nsfw/pussy__, anus, __nsfw/ass__, (medium full shot)
+        - >-
+            __nsfw/woman__, lying on her side and (masturbating her clitoris), from side, parted lips, {small|medium|large} ass, narrow waist, anus, __nsfw/ass__, __nsfw/fluids__, __nsfw/pussy__, (medium full shot), high angle
+        - __nsfw/woman__, solo, (curled_up, on her side), sleeping, drooling, open mouth, anus, pussy hole, ass focus
+        - __nsfw/woman__, (sleeping, from side, lying on her stomach), perfect round ass, anus, wet pussy, cameltoe, dripping, drooling, __nsfw/breasts__, panties pulled down
+    
+    peeing:
+        - 1girl, squatting, __nsfw/breasts__, nipples, __nsfw/hairiness__, clitoris, cute pose, horny, orgasm face, __nsfw/pee__, spread pussy
+        - 1girl, (from behind, on all fours), arched back, detailed anus, looking back at viewer, horny, moaning, orgasm face, __nsfw/pee__, pussy
+        - 1girl, legs spread, {feet pov,|} moaning, blushing, shy, __nsfw/breasts__, puffy nipples, (shibari, ribbon bondage:1.4), juicy, __nsfw/pee__, close up, pussy, climax
+    
+    bdsm:
+        solo:
+            - __nsfw/woman__, full body, from below, shibari, bondage, chained, suspended from the ceiling, spread legs, arms over head, __nsfw/breasts__, __nsfw/fluids__, __nsfw/hairiness__, __nsfw/pussy__, uplift
+            - >-
+                __nsfw/woman__, shibari, bondage, rope, chained, suspended from the ceiling, {spread legs|standing}, arms stretched out, __nsfw/fluids__, clitoris, __nsfw/hairiness__, __nsfw/breasts__
+            - >-
+                __nsfw/woman__, shibari, bondage, rope, chained, tied to the wall, presenting ass from behind{,high angle|}, arms stretched out, {__nsfw/fluids__,|cum dripping from ass|}, cervix, anus, looking back at the viewer
+            - __nsfw/woman__, shibari, bondage, rope, chained, tied to the wall, spreading legs, high angle, arms stretched out, __nsfw/fluids__, __nsfw/hairiness__, clitoris, urethra, __nsfw/breasts__
+            - >-
+              __nsfw/woman__, ((hands tied on back)), view from {above|below}, from behind, hands tied behind back, __nsfw/fluids__, __nsfw/pussy__, {looking back at viewer, |}__nsfw/ass__, detailed anus, ass focus
+            - >-
+              __nsfw/woman__, ((hands tied on back)), view from {above|below}, hands tied behind back, __nsfw/fluids__, __nsfw/pussy__{, looking at viewer |}, __nsfw/breasts__, __nsfw/hairiness__, pussy focus
+            - __nsfw/woman__, hands tied above head, ankles chained above head, lying on back, bondage, __nsfw/breasts__, __nsfw/fluids__, __nsfw/hairiness__, __nsfw/pussy__
+            - __nsfw/woman__, head pulled back, shibari, (suspended, hanging from rafters), breast bondage, arms tied behind back, legs spread and tied, solo, (red rope:1.1), (hanging in air), __nsfw/breasts__, __nsfw/fluids__, __nsfw/hairiness__, __nsfw/pussy__
+        man-woman:
+            - >-
+                __nsfw/woman__, shibari, on chair, head turned, legs held up, ({anal|vaginal} sex with man), __nsfw/man__, penis, solo focus, pov, __nsfw/breasts__, uncovered breasts, __nsfw/hairiness__
+            - >-
+                __nsfw/woman__, {from behind|laying|high angle|low angle|suspended from the ceiling}, shibari, bondage, rope, chained, {spread legs,|}  arms stretched out, __nsfw/breasts__, {__nsfw/hairiness__,|} (vaginal sex with man), __nsfw/man__, penis, solo focus, pov
+            - >-
+                __nsfw/woman__, {from behind|laying|high angle|low angle|suspended from the ceiling}, shibari, bondage, rope, chained, {spread legs,|} arms stretched out, __nsfw/breasts__, pussy, clitoris, __nsfw/fluids__, {__nsfw/hairiness__,|} (anal sex with man), __nsfw/man__, penis, solo focus, pov
+            - >-
+                __nsfw/woman__, from side, shibari, bondage, rope, hands tied, chained, __nsfw/breasts__, __nsfw/fluids__, {__nsfw/hairiness__,|} ({anal|vaginal} sex with man), __nsfw/man__, penis, solo focus, pov
+            - __nsfw/woman__, __nsfw/man__, saliva dripping, detailed penis, sexy pose, kneeling, bound, penis on face, __nsfw/breasts__, drooling, blushing, seductive look, tongue out, looking up, shibari, mouth gag, collar, pussy
+    
+    blowjob:
+        - __nsfw/woman__, woman laying on back, breasts focus, from above, __nsfw/man__, penis, pov, paizuri, breasts squeezed {together|}, cum, ejaculation
+        - __nsfw/woman__, large breasts, uncovered breasts, __nsfw/man__, (big penis, huge man), penis, solo focus, pov, oral, fellatio, facial, male pubic hair, paizuri, (mouth full of cum, cum in mouth), breasts squeezed {together|}, uncovered breasts
+        - __nsfw/woman__, (blowjob:1.3), __nsfw/man__, (big penis, huge man), penis, solo focus, pov, oral, cum on body, fellatio, facial, male pubic hair, cum on face
+        - __nsfw/woman__, fellatio, (facial), (cum on face), (male pov, big penis), male pubic hair
+        - __nsfw/woman__, (licking penis), (cum on face), (mouth full of cum, cum in mouth), male pov, (big penis), male pubic hair
+        - >-
+            __nsfw/woman__, licking cock, {__nsfw/breasts__,|}, {from side,|} side view, __nsfw/man__, penis, solo focus, pov, oral, male pubic hair
+        - __nsfw/woman__, woman kneeling, {low angle|side view}, __nsfw/man__, penis, pov head grab, fellatio, oral
+        - __nsfw/woman__, cock next to mouth, (((cock tease))), cock worship, kissing, looking up, __nsfw/man__
+        - __nsfw/woman__ giving deepthroat, cock slumped over girl face, cum on face, cock worship, tongue out, penis on face, 1male with medium size cock
+        - __nsfw/woman__, looking up, blushing, cute pose, cock slumped over girl face, cum on face, cock worship, tongue out, penis on face, 1male with medium size cock
+        - __nsfw/woman__, (view from above, looking down), {crying, tears|closed eyes|running mascara}, {sitting on knees,|} drooling, ((deep throat), sucking penis), head grab, ass up, arching back, perfect ass
+        - __nsfw/woman__, ruined makeup, saliva, rolling eyes, drooling, innocent face, looking at viewer, ((deep throat)), hand on head, blowjob, pov
+        - __nsfw/woman__, cock worship, open mouth, tongue out, looking up, perfect round ass, spread legs, ass up, sloppy, perfect hands, __nsfw/man__, standing, penis, top view, top angle
+    
+    footjob:
+        - __nsfw/woman__, sole focus on feet, foot on penis, toes caressing shaft, man laying down, solo focus, pov, cum on feet, legs, toes
+        - __nsfw/woman__, footjob, woman using one foot, toes on tip of penis, solo focus, pov, cum dripping from foot, legs
+        - >-
+          __nsfw/woman__, both feet on penis, woman sitting, cum on toes, footjob, pov, male pubic hair, penis, full body, __nsfw/breasts__, uncovered breasts
+        - >-
+          __nsfw/woman__, woman laying on back, feet together, soles rubbing penis, cum on feet, pov, male pubic hair, penis, full body, __nsfw/breasts__, uncovered breasts
+        - >-
+          __nsfw/woman__, woman kneeling, one foot rubbing penis, toes caressing, solo focus, pov, cum on feet, legs, toes, __nsfw/breasts__, uncovered breasts
+        - >-
+           __nsfw/woman__, spreading legs, from below, ((toes, barefoot, detailed feet, feet #focus, close-up)), pussy, {clitoris, small pubes,|} half-closed eyes, blush, open mouth, dynamic angle
+    
+    solo:
+        acrobatic:
+            - >-
+              __nsfw/woman__, jack-o-pose, flexible, spread legs, top-down bottom-up, {__nsfw/fluids__, __nsfw/hairiness__, clitoris, anus,|(rear view),} __nsfw/breasts__{|, high angle}
+            - >-
+              __nsfw/woman__, __nsfw/pussy__, upside-down split, __nsfw/breasts__, __nsfw/fluids__, __nsfw/hairiness__
+            - >- 
+              __nsfw/woman__, {full body, |}{hanging, |}{rear view|from side}, on all fours, looking back at viewer, __nsfw/pussy__, __nsfw/ass__, anus
+        close-up:
+            - >-
+                __nsfw/woman__, from below, sitting, (spread pussy), (pussy close-up:1.2), __nsfw/fluids__, {__nsfw/hairiness__,|} __nsfw/breasts__, uncovered breasts
+            - __nsfw/woman__, squatting, from below, (pussy focus, close-up, pussy spread, clitoris, long labia, pussy hole), see-through underwear, panties, pubic hair, small pubes, half-closed eyes, blush, open mouth, dynamic angle
+        facial:
+            - >-
+                __nsfw/woman__, (fingering her pussy:1.4),(licking),solo focus,pov,oral,(facial),(mouth full of cum, cum in mouth, cum on face), __nsfw/breasts__
+            - >-
+                __nsfw/woman__, (masturbating her clitoris:1.2),(licking),solo focus,pov,oral,(facial),(mouth full of cum, cum in mouth, cum on face), __nsfw/breasts__
+            - >-
+                __nsfw/woman__, (spreading legs:1.4),tongue sticking out,solo focus,pov,oral,(facial),(mouth full of cum, cum in mouth, cum on face), large hanging breasts
+        front:
+            - >-
+              __nsfw/woman__, uplift, __nsfw/hairiness__, __nsfw/pussy__, __nsfw/fluids__, full body, __nsfw/breasts__, uncovered breasts
+            - >-
+                __nsfw/woman__, legs, feet, pussy, __nsfw/ass__, posing, legs up, arching, __nsfw/fluids__, __nsfw/pussy__, saliva, thighs, feet, toes, __nsfw/breasts__, uncovered breasts {|, grabbing own ass}
+            - >-
+                __nsfw/woman__, laying on back{, high angle|}, legs up, __nsfw/ass__, __nsfw/pussy__, __nsfw/fluids__, full body, feet {|, grabbing own ass}
+            - >-
+                __nsfw/woman__, spreading legs, (__nsfw/fluids__), __nsfw/breasts__, uncovered breasts, __nsfw/hairiness__, __nsfw/pussy__
+            - >-
+                __nsfw/woman__, (lying on back, high angle, open legs), (__nsfw/fluids__), __nsfw/breasts__, uncovered breasts, __nsfw/hairiness__, __nsfw/pussy__
+            - >-
+                __nsfw/woman__, spreading legs and (masturbating her pussy:1.2), (__nsfw/fluids__), __nsfw/breasts__, uncovered breasts, __nsfw/hairiness__
+            - >-
+                __nsfw/woman__, spreading legs and (fingering her pussy:1.2), (__nsfw/fluids__), __nsfw/breasts__, uncovered breasts
+            - >-
+                __nsfw/woman__, spreading legs, __nsfw/breasts__, uncovered breasts, (__nsfw/fluids__), __nsfw/hairiness__, __nsfw/pussy__
+            - >-
+                __nsfw/woman__, spreading legs and (breast grab), __nsfw/breasts__, uncovered breasts, (__nsfw/fluids__), __nsfw/hairiness__, __nsfw/pussy__
+            - >-
+                __nsfw/woman__, spreading legs and (masturbating her pussy:1.2), __nsfw/fluids__, uncovered breasts
+            - >-
+                __nsfw/woman__, spreading legs and (breast grab), (__nsfw/fluids__), __nsfw/breasts__, uncovered breasts, __nsfw/hairiness__, __nsfw/pussy__
+            - >-
+                __nsfw/woman__, laying, legs up, from above, __nsfw/ass__, feet, __nsfw/ass__, posing, __nsfw/fluids__, dripping saliva, thighs, feet, toes, __nsfw/breasts__, uncovered breasts {|, grabbing own ass}, __nsfw/pussy__
+            - >-
+                __nsfw/woman__, laying, legs up, from above, full body, __nsfw/ass__, feet, __nsfw/ass__, anus, posing, __nsfw/fluids__, dripping saliva, thighs, feet, toes, __nsfw/breasts__, uncovered breasts {|, grabbing own ass}, __nsfw/pussy__
+            - >-
+                __nsfw/woman__, laying on back, high angle, spreading legs, (__nsfw/fluids__),(cum on face),(cum in mouth), __nsfw/breasts__, uncovered breasts, __nsfw/hairiness__, __nsfw/pussy__
+            - >-
+                __nsfw/woman__, full body, kneeling, spread legs, breast grab, __nsfw/breasts__, __nsfw/fluids__, __nsfw/hairiness__, uplift, __nsfw/pussy__
+            - >-
+                __nsfw/woman__, standing on one leg, split leg, breast grab, __nsfw/fluids__, __nsfw/hairiness__, uplift, __nsfw/pussy__
+            - >-
+                __nsfw/woman__, spreading legs, horizontal split, {__nsfw/pussy__, |}__nsfw/breasts__, (__nsfw/fluids__), anus, __nsfw/hairiness__
+            - >-
+                __nsfw/woman__, spreading legs, vertical split, {__nsfw/pussy__, |}__nsfw/breasts__, (__nsfw/fluids__), anus, __nsfw/hairiness__
+            - >-
+                __nsfw/woman__, spreading legs, (masturbating), __nsfw/pussy__
+            - __nsfw/woman__, solo, (lowering pants), pulling down pants, hands on pants, __nsfw/breasts__, pussy from behind, sitting, legs raised up, close up ass
+            - __nsfw/woman__, (leaning to wall), __nsfw/breasts__, skirt lift, lifting her skirt, blush, eyes closed, secretly masturbating, panties pull, fingering, pussy juice, dynamic angle
+            - >-
+                __nsfw/woman__, ({leaning to wall, |}squatting), __nsfw/breasts__, sexy pose, exhausted, fingering, dynamic angle
+            - __nsfw/woman__, (selfie, from below, close-up, (pussy focus)), standing, __nsfw/breasts__, nipples, wide hips, sexy pose, pussy, __nsfw/hairiness__, spread pussy
+            - >-
+                __nsfw/woman__, (selfie, from below, close-up, (breasts focus)), standing, __nsfw/breasts__, nipples, wide hips, sexy pose, pussy, __nsfw/hairiness__, spread pussy
+            - __nsfw/woman__, (selfie, standing, sitting, legs spread, one leg raised, cute pose), __nsfw/breasts__, nipples, wide hips, thigh_highs, sexy_thigh, pussy, clitoris, __nsfw/hairiness__
+            - __nsfw/woman__, ((selfie), hugging legs, legs up), cute pose, detailed anus,  bubble ass, sexy_thighs, thigh_highs, sexy_thigh, pussy
+            - __nsfw/woman__, ((selfie), hugging legs, close-up), cute pose, detailed anus,  bubble ass, sexy_thighs, thigh_highs, sexy_thigh, pussy
+            - __nsfw/woman__, legs up, barefoot, feet, after sex, pussy, anus, cum dripping, __nsfw/hairiness__, big ass, soft ass
+            - __nsfw/woman__, spreading legs, pussy, __nsfw/hairiness__, legs up, cum dripping from pussy, looking at viewer
+            - __nsfw/woman__, lying on bed, spreading legs, from above, __nsfw/breasts__, blush, legs up, feet, soles, puffy nipples, __nsfw/hairiness__, thighs
+            - __nsfw/woman__, solo, lying on bed, legs up, (holding thighs together:1.35), from above, feet, soles, blush, __nsfw/pussy__
+            - __nsfw/woman__, solo, side view, __nsfw/breasts__, blush, one leg up, foot, puffy nipples, __nsfw/pussy__, __nsfw/hairiness__, thigh
+        side:
+            - >-
+                __nsfw/woman__, (from side, presenting ass), (__nsfw/fluids__), anus, __nsfw/ass__, __nsfw/breasts__, uncovered breasts, (looking back at the viewer)
+            - >-
+                __nsfw/woman__, (from side, presenting ass), (__nsfw/fluids__), anus, __nsfw/ass__, __nsfw/breasts__, uncovered breasts
+            - >-
+                __nsfw/woman__, laying on side, __nsfw/fluids__, anus, __nsfw/breasts__, uncovered breasts
+            - >-
+                __nsfw/woman__, (laying on side, from side), knees up, hands grabbing ass, __nsfw/fluids__, anus
+            - >-
+                __nsfw/woman__, (laying on side, from side), __nsfw/pussy__, vertical split, __nsfw/breasts__, (__nsfw/fluids__), anus, __nsfw/hairiness__ 
+            - __nsfw/woman__, full body, from side, looking at viewer, __nsfw/pussy__, __nsfw/ass__, anus
+            - __nsfw/woman__, lying on side, looking at viewer, from front, front view, thighs, __nsfw/breasts__, puffy nipples, __nsfw/ass__, feet, blushing, ass crack, anus, pussy
+        behind:
+            - >-
+                __nsfw/woman__, (from behind, on all fours), __nsfw/pussy__, anus, __nsfw/ass__, __nsfw/fluids__, uplift, full body
+            - >-
+                __nsfw/woman__, (spreading ass from behind), __nsfw/fluids__, __nsfw/ass__, __nsfw/hairiness__, (looking back at the viewer)
+            - >-
+                __nsfw/woman__, (spreading ass from behind), __nsfw/fluids__, __nsfw/ass__, __nsfw/hairiness__, (looking back at the viewer)
+            - >-
+                __nsfw/woman__, (spreading ass from behind), __nsfw/ass__, __nsfw/fluids__, full body, feet, looking back at the viewer
+            - >-
+                __nsfw/woman__, (presenting her ass with pulled down pants), {on her knees|bent over}, __nsfw/ass__, anus, __nsfw/fluids__, __nsfw/breasts__, uncovered breasts, looking back at the viewer{, high angle|}
+            - >-
+                __nsfw/woman__, from behind, __nsfw/ass__, __nsfw/fluids__, cum-filled pussy, full body, feet, looking back at the viewer{, high angle|}
+            - >-
+                __nsfw/woman__, (presenting ass from behind), (__nsfw/fluids__), anus, __nsfw/ass__, __nsfw/breasts__, uncovered breasts, (looking back at the viewer){, high angle|}
+            - >-
+                __nsfw/woman__, on all fours, rear view, (masturbating), __nsfw/pussy__, anus
+            - __nsfw/woman__, bubble ass, wide hips, (from behind, bent over, ass grab, pov hands), panties down, detailed anus, __nsfw/pussy__, __nsfw/breasts__ climax, orgasm, close shot, dynamic angle
+            - __nsfw/woman__, ((selfie), from behind, spread ass, cute pose, close-up), bubble ass, detailed anus, sexy_thighs, thigh_highs, sexy_thigh, pussy
+            - __nsfw/woman__, ((selfie), from side, cute pose, close-up, spread ass), bubble ass, detailed anus, sexy_thighs, thigh_highs, sexy_thigh, pussy
+            - __nsfw/woman__, (from behind, doggy style, ponytail), bubble ass, detailed anus, moaning, drooling, penetration, penis, pov, ((hair pull))
+            - __nsfw/woman__, standing, from behind, bent over, looking back at viewer, perfect round ass,  wet pussy, blush, lips, vulva, detailed anus, white panties pulled down, ass focus, close-up
+            - __nsfw/woman__, from below, leaning forward, close-up, cute pose, dynamic angle, ass focus, pussy focus, blush, nervous, looking at viewer, pussy, wet pussy, clitoris, bubble ass, anus, garter belt, spank marks
+            - __nsfw/woman__, view from behind, from below, (posing on escalator:1.5), shopping mall, ass focus, bare ass, pussy, wet pussy, skirt, knee high socks, upskirt, cum dripping on leg{, lifting up skirt|}
+            - __nsfw/woman__, (ass focus, close-up, standing, view from behind, from below, (posing on escalator), shopping mall), bare ass, pussy, wet pussy, skirt, upskirt, cum dripping{, lifting up skirt|}
+            - __nsfw/woman__, lying on stomach, narrow hips, thighs, moaning, resting, __nsfw/ass__, blushing, embarrassed, orgasm face, nose blush, shy, looking at viewer, from back, back view, ass crack, on the floor, pussy spread,  small pubes, pussy hole, dripping pussy, detailed anus, __nsfw/breasts__, puffy nipples
+            - __nsfw/woman__, lying on stomach, turn back, sexy_thighs, bubble ass, pussy from behind, posing, ass focus, pov, ass grab, spread ass, thighs, __nsfw/breasts__, blushing, embarrassed, horny, puffy nipples
+            - __nsfw/woman__, sitting, back view, big ass, from behind, close up, from below, looking back at viewer, pussy, __nsfw/hairiness__, __nsfw/breasts__, blush, feet, soles, puffy nipples, curvy, thighs
+    
+    vaginal:
+        front:
+            - >-
+                __nsfw/woman__, (vaginal sex with man, riding:1.5), bent over, __nsfw/breasts__, uncovered breasts
+            - >-
+                __nsfw/woman__, (vaginal sex with man, riding:1.5), lean forward, __nsfw/breasts__, uncovered breasts
+            - >-
+                __nsfw/woman__, (vaginal sex with man, riding:1.5), {penetration|arching toward the viewer}, __nsfw/breasts__, uncovered breasts, __nsfw/hairiness__
+            - >-
+                __nsfw/woman__, lying on back, (vaginal sex with man:1.5), penis, erection, __nsfw/breasts__, uncovered breasts, __nsfw/hairiness__
+            - >-
+                __nsfw/woman__, (vaginal sex with man:1.4),(licking), penis, erection, solo focus,pov,oral,(facial),(mouth full of cum, cum in mouth,cum on face), __nsfw/breasts__
+            - >-
+                __nsfw/woman__, (missionary position, sex with man), penis inside pussy, {gentle|rough} thrusting, __nsfw/breasts__, uncovered breasts, __nsfw/hairiness__
+            - __nsfw/woman__, laying on back, ((breasts squeezed together, holding breasts)), knees up, close up, low angle, feet, legs apart, shirt lifted up, __nsfw/breasts__, wet pussy, round ass, moaning, vaginal penetration, penis, pov
+        side:
+            - >-
+                __nsfw/woman__, (laying on side, from behind), (vaginal sex with man from side:1.5), penis, erection, __nsfw/breasts__, uncovered breasts
+            - >-
+                __nsfw/woman__, (laying on side, from behind), (vaginal sex with man from side:1.5), penis, erection, __nsfw/breasts__, uncovered breasts, looking at the viewer
+            - >-
+                __nsfw/woman__, (vaginal sex with man from side:1.5), penis, erection, doggystyle, anus, __nsfw/ass__, __nsfw/breasts__, uncovered breasts
+            - >-
+                __nsfw/woman__, (vaginal sex with man from side:1.5), penis, erection, vertical split, __nsfw/breasts__, (__nsfw/fluids__),  __nsfw/hairiness__
+            - >-
+                __nsfw/woman__, standing on one leg, vertical split, __nsfw/breasts__,  {__nsfw/hairiness__,|} (vaginal sex with man), from side, side view, __nsfw/man__, penis, solo focus, male pubic hair
+        behind:
+            - >-
+                __nsfw/woman__, __nsfw/man__, from behind, (vaginal sex with man from behind, riding:1.5), penis, erection, __nsfw/ass__, anus, {arched back,|} __nsfw/breasts__, looking back at the viewer
+            - >-
+                __nsfw/woman__, having hardcore vaginal sex with man, bend over, from behind, looking back, doggystyle sex, pleasured, {arched back,|} {hands on ass|white panties pulled aside}, anus, penis, erection, high angle
+            - >-
+                __nsfw/woman__, (vaginal sex with man from behind:1.5), penis, erection, male pubic hair, anus, __nsfw/ass__, {arched back,|} __nsfw/breasts__, uncovered breasts
+            - >-
+                __nsfw/woman__, (brutal vaginal sex with man from behind:1.5), penis, erection, male pubic hair, anus, __nsfw/ass__, {arched back,|} __nsfw/breasts__, uncovered breasts, screaming, bent over
+            - >-
+                __nsfw/woman__, (doggy style, sex with man), __nsfw/man__, man gripping hips, {arched back,|} __nsfw/breasts__, uncovered breasts
+            - __nsfw/woman__, (reverse cowgirl position), woman riding man, looking back
+            - __nsfw/woman__, (prone bone, lying on stomach), anus, pov, ass grab, 1male out of focus, penis, ass, vaginal sex from behind
+            - __nsfw/woman__, (laying on stomach, arm around pillow, one leg up, sexy pose), seductive expression, bubble ass, detailed anus, pussy, __nsfw/man__, penis, male pov, grabbing ass, grabbing waist, vaginal sex, penetration
+            - __nsfw/woman__, from behind, bent over, looking back at viewer, bubble ass, spanked ass, lustful, seductive look, blushing, __nsfw/breasts__, __nsfw/man__, grabbing waist, doggy sex, vaginal sex, deep penetration, ass focus, penis, pov
+            - __nsfw/woman__, top view, chest down, ass up, all fours, male pov, male hands, spreading pussy, ass focus, skin pores
+            - __nsfw/woman__, huge breasts, nipples, wide hips, large butt, focus on woman, (eye rolling, looking back), seductive, (face pressed to wall:1.5), standing, seductive eyes, standing sex, squishing cheek, (__nsfw/man__, penis, vaginal sex from behind), eye rolling, drooling, (breast press:1.4), pinned to wall, pussy juice, pinned down, from above, high angle
+    
+    anal:
+        front:
+            - __nsfw/woman__, (anal sex with man, riding:1.5), bent over, __nsfw/breasts__, uncovered breasts
+            - __nsfw/woman__, (anal sex with man, riding:1.5), lean forward, __nsfw/breasts__, uncovered breasts
+            - >-
+                __nsfw/woman__, (anal sex with man, riding:1.5), {penetration|arching toward the viewer}, __nsfw/breasts__, uncovered breasts, __nsfw/hairiness__
+            - __nsfw/woman__, lying on back, (anal sex with man:1.5), penis, erection, __nsfw/breasts__, uncovered breasts, __nsfw/hairiness__
+            - __nsfw/woman__, (anal sex with man:1.4),(licking), penis, erection, solo focus,pov,oral,(facial),(mouth full of cum, cum in mouth,cum on face), __nsfw/breasts__
+        side:
+            - >-
+                __nsfw/woman__, (laying on side, from behind), (anal sex with man from side:1.5), penis, erection, __nsfw/breasts__, uncovered breasts
+            - >-
+                __nsfw/woman__, (laying on side, from behind), (anal sex with man from side:1.5), penis, erection, __nsfw/breasts__, uncovered breasts, looking at the viewer
+            - >-
+                __nsfw/woman__, (anal sex with man from side:1.5), penis, erection, doggystyle, anus, __nsfw/ass__, __nsfw/breasts__, uncovered breasts
+            - >-
+                __nsfw/woman__, (anal sex with man from side:1.5), penis, erection, vertical split, __nsfw/breasts__, (__nsfw/fluids__),  __nsfw/hairiness__
+            - >-
+                __nsfw/woman__, standing on one leg, vertical split, __nsfw/breasts__, pussy, clitoris, (__nsfw/fluids__), {__nsfw/hairiness__,|} (anal sex with man), from side, side view, __nsfw/man__, penis, solo focus, male pubic hair
+        behind:
+            - >-
+                __nsfw/woman__, __nsfw/man__, from behind, (anal sex with man from behind, riding:1.5), penis, erection, __nsfw/ass__, {arched back,|} __nsfw/breasts__, looking back at the viewer
+            - >-
+                __nsfw/woman__, having hardcore anal sex, bend over, from behind, looking back, doggystyle sex, pleasured, {arched back,|} {hands on ass|white panties pulled aside},  high angle
+            - >-
+                __nsfw/woman__, (anal sex with man from behind:1.5), penis, erection, male pubic hair, {arched back,|} __nsfw/breasts__, uncovered breasts
+            - __nsfw/woman__, (anal sex with man, riding:1.5), bent over
+            - >-
+                __nsfw/woman__, (brutal anal sex with man from behind:1.5), penis, erection, male pubic hair, {arched back,|} __nsfw/breasts__, uncovered breasts, screaming, bent over
+            - __nsfw/woman__, from behind, sitting on a bar stool, __nsfw/man__, (anal sex from behind), penis
+            - __nsfw/woman__, top view, chest down, ass up, all fours, male pov, ass spread, detailed anus, ass focus, pussy, skin pores
+            - __nsfw/woman__, large natural lips, long eyelashes, strong black eyeliner, from above, from behind, looking back, (face close up), ass, standing sex, penis, sex from behind, arched back, no panties
+    
+    two-women:
+        - >-
+            2girls, two women {standing|spooning|laying} {, kissing each other|}, ({masturbating her clitoris|fingering pussy}), {breast grab, |} __nsfw/fluids__, __nsfw/breasts__, uncovered breasts, __nsfw/hairiness__
+        - 2girls, two women, from behind, (woman on top of woman), cervix, __nsfw/ass__, anus, __nsfw/breasts__, uncovered breasts
+        - 2girls, (cuddling and touching each other), intimate and soft, pussy, clitoris, __nsfw/breasts__, uncovered breasts, __nsfw/hairiness__
+        - 2girls, (face-sitting), two women, one woman receiving oral sex from a woman, pussy, clitoris, __nsfw/breasts__, uncovered breasts, __nsfw/hairiness__
+        - >-
+            {from behind|rear view|from side}, {sitting,|laying,|} 2girls, ({strap-on sex,  dildo|using double-ended dildo}, vaginal sex), woman penetrating woman, __nsfw/breasts__, uncovered breasts
+        - >-
+            {from behind,|} (strap-on sex, dildo, vaginal sex), female pov, {solo focus, |} __nsfw/breasts__, uncovered breasts
+        - 2girls, two women, (vaginal sex with __nsfw/accessory__), __nsfw/breasts__, uncovered breasts, __nsfw/hairiness__
+        - 2girls, two women, (rimming), rim job, anilingus, licking asshole, __nsfw/ass__, bent over, pussy juice
+        - 2girls, yuri, (cunnilingus:1.35), highly detailed face, pussy focus, __nsfw/breasts__
+        - 2girls, (cunnilingus:1.35), 3/4 side view, wet pussy, highly detailed face, __nsfw/breasts__
+        - 2girls, __nsfw/breasts__, nipples, face focus, pose, looking at viewer, sexy, hugging, (groping breasts, groped from behind), highly detailed face
+        - 2girls, bend forward, from behind, (from behind, kissing from behind), breast grab, fingering and grabbing breasts and kissing from behind, panties pulled down, highly detailed face, __nsfw/breasts__
+        - 2girls, yuri, boobs squeezed together, breast grab from behind, smiling, fingering pussy from front, highly detailed face, __nsfw/breasts__
+        - 2girls, yuri, bend forward, cute pose, breasts focus, close-up, breasts squeezed together, breast grab from behind, pussy, fingering, highly detailed face, __nsfw/breasts__
+        - 2girls, yuri, ((anilingus)), rimming, rimjob, ass licking, jack-o-pose, side view, highly detailed face
+        - 2girls, yuri, __nsfw/breasts__, breast lift, nipple grab, highly detailed face
+        - 2girls, yuri, (bondage, chained hands, chained collars, covered in chains, chained together), kissing, cum on face, __nsfw/breasts__, highly detailed face
+        - 2girls, full body, yuri, cunnilingus, legs apart, view from behind, one girl on her knees, other girl standing
+        - 2girls, dynamic pose, (licking breasts:1.3), ass grab, spread ass, detailed anus, close up
+        - 2girls, yuri, shy, kissing passionately, fingering, embarrassed, blushing, high-angle shot, pinned against a wall, highly detailed face
+        - 2girls, yuri, __nsfw/breasts__, bend forward, from behind, (from behind, kissing from behind), breast grab, fingering and grabbing breasts and kissing from behind, panties, highly detailed face
+        - 2girls, yuri, __nsfw/woman__ grabbing ass, kissing, ass grab, grabbing, highly detailed face
+        - 2girls, yuri, __nsfw/woman__ kissing and fingering, __nsfw/woman__ arms tied above head, lying on side, __nsfw/pussy__, highly detailed face
+        - 2girls, yuri, __nsfw/breasts__, (pov cunnilingus), (licking pussy), (female pov), looking at viewer, cunnilingus focus, drooling, smiling, highly detailed face
+        - 2girls, yuri, hug, (masturbation), breasts out of shirt, nipples, embarrassed, breasts grab, licking, wet pussy, breast focus, breast close-up, highly detailed face
+        - 2girls, yuri, (cunnilingus), full body, legs apart, view from behind, __nsfw/woman__ on her knees, __nsfw/woman__ lying on table, close-up
+        - 2girls, yuri, cunnilingus, __nsfw/woman__ lying on back, __nsfw/woman__ licking pussy, close up, legs spread, legs, feet, moaning, half dressed, __nsfw/breasts__, __nsfw/fluids__, highly detailed face
+        - >-
+            2girls, yuri, __nsfw/woman__ arms tied above head, leaning to a wall, pulling up top, pulled up top, lifted by another girl, lifted her top, shirt lift, __nsfw/breasts__, grabbing breast, blushing, {__nsfw/woman__ kissing and fingering|breast sucking}, highly detailed face
+        - >-
+            2girls, yuri, __nsfw/woman__ arms tied above head, leaning to a wall, pulling up top, pulled up top, lifted by another girl, lifted her top, shirt lift, __nsfw/breasts__, grabbing breast, blushing, {__nsfw/woman__ kissing and fingering|breast sucking}, highly detailed face, anus, pussy
+        - >-
+            2girls, yuri, __nsfw/woman__ standing against tree, shirt lift, kneeling, cunnilingus, __nsfw/breasts__, __nsfw/fluids__, highly detailed face
+        - 2girls, lying in bed, feet, soles, back view, feet, __nsfw/ass__, anus, __nsfw/pussy__, erotic, seductive, sexy, thighs, highly detailed face
+        - 2girls, embrace, sexy, sitting, lying sideway, arm support, large round breasts, nude, from behind, ass focus, __nsfw/ass__, __nsfw/pussy__, looking back, smirk, blush, seductive, posing, looking at viewer, highly detailed face
+        - 2girls, yuri, dynamic pose, (licking butt:1.3), drooling, saliva drip, round ass, bubble butt, soft ass, thighs, assworship, tongue focus, ass grab, spread ass, detailed anus, __nsfw/pussy__, close up, dynamic angle, dutch angle, highly detailed face
+        - 2girls, yuri, dynamic angle, doggystyle, (ass_fingering:1.35), detailed anus, wet pussy, cat pose, moaning, soft smile, highly detailed face
+        - 2girls, lying on stomach, wet pussy, rear view, pink nipple, pussy juice, breast, ass, pussy, shy, looking at viewer, looking over shoulder, showing ass, normal breasts, breasts exposed, shirt pulled up over breasts, lips parted, highly detailed face
+        - 2girls, yuri, __nsfw/woman__ arms tied above head, lying on a bed, shirt lift, __nsfw/breasts__, __nsfw/pussy__, open mouth, blushing, __nsfw/woman__ kissing and fingering, highly detailed face
+        - 2girls, yuri, __nsfw/woman__ arms tied above head, leaning to a wall, shirt lift, pants pulled down, panties pulled down, __nsfw/breasts__, grabbing breast, blushing, __nsfw/woman__ kissing and fingering, highly detailed face
+        - 2girls, back view, embrace, bodies intertwined, undressing, cheek to cheek, looking at viewer, fingering, masturbating, orgasm face, taking off clothes seductively, __nsfw/pussy__, __nsfw/breasts__, lying on floor, breasts exposed, looking at viewer, highly detailed face
+        - 2girls, ass lick, spreading ass cheeks, hands on ass, __nsfw/woman__ licking anus, drooling, saliva, detailed anus, pussy hole, sexy, looking back, moaning, blush, sweat, from below, thick thighs, thigh_highs, highly detailed face
+        - 2girls, spreading ass cheeks, hands on ass, licking, drooling, saliva, detailed anus, pussy hole, sexy, looking back, moaning, blush, from below, thick thighs, thigh_highs, highly detailed face
+        - 2girls, blushing, moaning, __nsfw/breasts__, wide hips, spread legs, one leg raised, pussy, __nsfw/woman__ lick pussy, (cunnilingus), sitting on bed, pose, bedroom, close-up, highly detailed face
+        - 2girls, yuri, ass, panties pulled down, anus, embarrassed, (analingus, __nsfw/woman__ licking asshole), wet, ass grab, open mouth, wet anus, (__nsfw/woman__ sleeping lying on her back), close view, face focus, surprised, asshole, cum in anus, drooling, excessive amount of cum, cum spurt, ass close-up, pussy hole, highly detailed face
+        - 2girls, lying on stomach, wet pussy, rear view, looking back at viewer, pussy juice, breast, perfect roubd ass, bubble ass, pussy hole, clitoris, panties pulled down, shy, looking over shoulder, perfect face, long and slender body, long legs, lips parted, dramatic angle, unique perspective, highly detailed face
+        - 2girls, view from under ass, no panties, girl rimming girl, lesbian rimming, anilingus, excessive pussy juice, lesbian squirting, thick lips, parted lips, tongue in anus, dynamic angle
+    
+    three-women:
+        - 3girls, yuri, __nsfw/breasts__, breast sucking, fingering, wet pussy, moaning, female orgasm, pussy, anus, __nsfw/breasts__, highly detailed face
+        - 3girls, yuri, breast grab, cunnilingus, wet pussy, moaning, female orgasm, pussy, anus, __nsfw/breasts__, highly detailed face
+        - 3girls, yuri, kissing, __nsfw/breasts__, breast grab, fingering, wet pussy, moaning, female orgasm, pussy, anus, __nsfw/breasts__, highly detailed face
+        - 3girls, yuri, kissing, __nsfw/breasts__, breast grab, breast sucking, wet pussy, moaning, female orgasm, pussy, anus, __nsfw/breasts__, highly detailed face
+        - 3girls, yuri, lying on bed, presenting ass, bubble ass, perfect round ass, kissing, __nsfw/breasts__, hugging, masturbation, wet pussy, moaning, female orgasm, pussy, detailed anus, __nsfw/breasts__, highly detailed face
+    
+    two-women-one-man:
+        - vaginal sex with man, (2girls, kissing, lesbian), cowgirl position, male pov, from below, penis
+        - 2girls, __nsfw/man__, penis, two girls, pussy next to mouth, threesome sex, vaginal sex, open mouth, tongue out, looking up, rolling eyes, long hair, leashed, collar, on a leash, perfect round ass, spread legs ass up, sloppy, dripping cum
+        - (two girls lying on a bed, 2girls, __nsfw/man__), dynamic angle, from above, from side, vaginal sex, large penis, spreading legs, girl on top, ass grab, __nsfw/ass__, (squeezing their breasts:1.2), __nsfw/breasts__, __nsfw/pussy__, pussy hole, orgasm, looking at viewer, plump lips, wet
+    
+    ##############################################################
+    ### CONFIGURATION ############################################
+    woman:
+        - 1girl
+    man:
+        - 1male out of frame
+    face-cover:
+        - black blindfold
+        - mouth taped, mouth covered
+        - tape gag
+    bind:
+        - covered in ropes, rope bondage
+        - covered in chains, chain bondage
+        - covered in ribbon, ribbon bondage
+        - slave collar, chained, chains, cuffs, shackles, manacles
+    breasts:
+        - __nsfw/breasts-size__, nipples
+        - __nsfw/breasts-size__, small pink nipples
+        - __nsfw/breasts-size__, pale pink nipples, tiny areolas
+        - __nsfw/breasts-size__, puffy nipples
+    breasts-size:
+        - >-
+          medium {teardrop |perky |perfectly round|}breasts
+        - >-
+          large {teardrop |sagging |hanging |perky |perfectly round|}breasts
+    skin-effect:
+        - blushing
+        - sweating
+        - freckles
+        - tanlines
+    skin-effect-bis:
+        - demonic runes tattoos
+        - black tattoos
+        - modern tattoos
+        - black tattoo, tattoo on arm
+    makeup:
+        - lipstick
+        - ruined mascara
+        - running mascara
+    emotion:
+        - horny, open mouth #
+        - orgasm, open mouth #
+        - crying
+        - tongue, gasp
+        - closed eyes
+        - seductive eyes, seductive
+        - nose blush
+        - blush
+        - blushing
+        - rolling_eyes
+        - eye rolling
+        - eyes rolling back, orgasm, screaming
+        - eyes rolling back, orgasm
+        - eyes rolling back
+        - embarrassed
+        - wink
+        - nervous
+        - flustered
+        - moaning
+        - surprised
+        - open mouth
+        - biting lip
+        - eyes rolling back, blush, biting lip
+        - parted lips
+        - half-closed eyes, one eye closed
+        - tongue out, saliva
+        - half closed eyes
+        - horny, blushing, half-closed eyes, drooling, open mouth
+    hairiness:
+        - small pubes
+        - pubic hair
+        - hairy pussy
+    ass:
+        - __nsfw/ass-size__
+    ass-size:
+        - soft ass
+        - round ass
+        - perfect round ass
+        - bubble ass
+    pussy:
+        - pussy
+        - pussy, clitoris, pussy hole
+    fluids:
+        - pussy_juice
+        - wet pussy
+        - pussy, cum dripping
+    facial-fluids:
+        - drooling
+        - saliva
+        - saliva dripping
+        - cum on face
+        - mouth full of cum
+        - cum in mouth
+    pee:
+        - peeing, female urination, urine stream
+    camera-position:
+        - close-up
+        - >-
+          {high angle|from above}
+        - >-
+          {low angle|from below}
+        - >-
+          {rear view|from behind}
+        - >-
+          {side view|from side}
+    lighting:
+        - dim lighting
+        - soft lighting
+        - natural lighting
+        - candle-lit
+        - dramatic lighting
+        - volumetric lighting
+        - cinematic lighting
+        - bad lighting, one light source, (dark shadows:1.6), dim lighting
+        - dappled light, dappled sunlight
+    action:
+        - >-
+          ({anal|vaginal} sex with man)
+        - >-
+          ({anal|vaginal} sex with man, riding:1.5)
+        - >-
+          ({anal|vaginal} sex with man from side:1.5)
+        - >-
+          (brutal {anal|vaginal} sex with man from behind:1.5)
+        - jack-o-pose, flexible, spread legs, top-down bottom-up
+        - >-
+          spread {pussy|ass}
+        - spreading legs
+        - >-
+          ({masturbating|fingering} her pussy:1.2)
+        - presenting ass
+        - >-
+          {vertical|horizontal} split
+        - standing on one leg
+        - shibari, bondage, ropes, chained, hands tied
+    accessory:
+        - >-
+          __nsfw/color__ beads
+        - >-
+          __nsfw/color__ {veiny |}dildo
+        - >-
+          __nsfw/color__ {heart-shaped |}butt plug
+    color:
+        - blue
+        - green
+        - rainbow
+        - red
+        - pink
+        - black
