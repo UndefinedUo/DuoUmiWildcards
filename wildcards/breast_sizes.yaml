@@ -1,0 +1,89 @@
+# Single-letter breast size references for use with {a|b|c|d|e|f|g|h|i|j|k}-size syntax
+a-size:
+  Prompts:
+    - 'a-cup breasts'
+    - 'petite breasts'
+    - 'small breasts'
+  Tags:
+    - Breast Size
+    - Small
+
+b-size:
+  Prompts:
+    - 'b-cup breasts'
+    - 'modest breasts'
+  Tags:
+    - Breast Size
+    - Small
+
+c-size:
+  Prompts:
+    - 'c-cup breasts'
+    - 'medium breasts'
+  Tags:
+    - Breast Size
+    - Medium
+
+d-size:
+  Prompts:
+    - 'd-cup breasts'
+    - 'large breasts'
+  Tags:
+    - Breast Size
+    - Large
+
+e-size:
+  Prompts:
+    - 'e-cup breasts'
+    - 'very large breasts'
+  Tags:
+    - Breast Size
+    - Large
+
+f-size:
+  Prompts:
+    - 'f-cup breasts'
+    - 'huge breasts'
+  Tags:
+    - Breast Size
+    - Huge
+
+g-size:
+  Prompts:
+    - 'g-cup breasts'
+    - 'gigantic breasts'
+  Tags:
+    - Breast Size
+    - Huge
+
+h-size:
+  Prompts:
+    - 'h-cup breasts'
+    - 'massive breasts'
+  Tags:
+    - Breast Size
+    - Huge
+
+i-size:
+  Prompts:
+    - 'i-cup breasts'
+    - 'enormous breasts'
+  Tags:
+    - Breast Size
+    - Huge
+
+j-size:
+  Prompts:
+    - 'j-cup breasts'
+    - 'colossal breasts'
+  Tags:
+    - Breast Size
+    - Huge
+
+k-size:
+  Prompts:
+    - 'k-cup breasts'
+    - 'impossibly large breasts'
+  Tags:
+    - Breast Size
+    - Huge

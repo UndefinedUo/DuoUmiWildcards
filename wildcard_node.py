@@ -8,6 +8,7 @@ import random
 import re
 import glob
 import textwrap
+import yaml
 from PIL import Image, ImageDraw, ImageFont
 import numpy as np
 import torch
@@ -16,8 +17,8 @@ import folder_paths
 
 class WildcardNode:
     """
-    A ComfyUI node that randomly selects lines from .txt files in the wildcards directory.
-    Supports multiple wildcards, nested folders, and recursive wildcards.
+    A ComfyUI node that randomly selects lines from .txt and .yaml files.
+    Supports wildcards, nested folders, recursive wildcards, and YAML tag-based selection.
     """
 
     def __init__(self):
@@ -32,11 +33,20 @@ class WildcardNode:
         # Cache for loaded wildcard files
         self.loaded_tags = {}
         self.all_txt_files = {}
+        self.all_yaml_files = {}
+        self.yaml_entries = {}  # Store parsed YAML entries
+        self.yaml_tags_to_entries = {}  # Map tags to entry titles
         self.refresh_file_cache()
 
+        # Track prefixes and suffixes to add
+        self.current_prefixes = []
+        self.current_suffixes = []
+
     def refresh_file_cache(self):
-        """Build a cache of all .txt files for quick lookup, supporting nested folders."""
+        """Build a cache of all .txt and .yaml files for quick lookup, supporting nested folders."""
         self.all_txt_files = glob.glob(os.path.join(self.wildcard_dir, '**/*.txt'), recursive=True)
+        self.all_yaml_files = glob.glob(os.path.join(self.wildcard_dir, '**/*.yaml'), recursive=True)
+
         # Create basename to path mapping (ignoring folders for simple lookups)
         self.txt_basename_to_path = {
             os.path.basename(file).lower().replace('.txt', ''): file
@@ -47,6 +57,132 @@ class WildcardNode:
             os.path.relpath(file, self.wildcard_dir).lower().replace('.txt', '').replace('\\', '/'): file
             for file in self.all_txt_files
         }
+
+        # Load all YAML files
+        self.load_all_yaml_files()
+
+    def load_all_yaml_files(self):
+        """Load and parse all YAML files, building tag-to-entry mappings."""
+        self.yaml_entries = {}
+        self.yaml_tags_to_entries = {}
+
+        for yaml_file in self.all_yaml_files:
+            try:
+                with open(yaml_file, 'r', encoding='utf-8') as f:
+                    data = yaml.safe_load(f)
+                    if not isinstance(data, dict):
+                        print(f"DuoUmiWild: Invalid YAML structure in {yaml_file}")
+                        continue
+
+                    for title, entry in data.items():
+                        if not isinstance(entry, dict):
+                            continue
+
+                        # Process the entry
+                        processed_entry = {
+                            'title': title,
+                            'prompts': entry.get('Prompts', []),
+                            'prefixes': entry.get('Prefix', []),
+                            'suffixes': entry.get('Suffix', []),
+                            'tags': [tag.lower().strip() for tag in entry.get('Tags', [])]
+                        }
+
+                        self.yaml_entries[title] = processed_entry
+
+                        # Build tag to entries mapping
+                        for tag in processed_entry['tags']:
+                            if tag not in self.yaml_tags_to_entries:
+                                self.yaml_tags_to_entries[tag] = []
+                            self.yaml_tags_to_entries[tag].append(title)
+
+            except Exception as e:
+                print(f"DuoUmiWild: Error loading YAML file {yaml_file}: {e}")
+
+    def select_by_tags(self, tags_query):
+        """
+        Select a YAML entry based on tag query.
+        Supports: <[Tag]>, <[Tag1][Tag2]> (AND), <[Tag1|Tag2]> (OR)
+
+        Args:
+            tags_query: The tag query string
+
+        Returns:
+            str: Selected prompt text, or empty string if not found
+        """
+        # Parse tags from the query
+        # Extract individual tags and operators
+        tag_pattern = re.compile(r'\[([^\]]+)\]')
+        tags = tag_pattern.findall(tags_query)
+
+        if not tags:
+            return ""
+
+        candidates = set()
+        first_tag = True
+
+        for tag_expr in tags:
+            tag_expr_lower = tag_expr.lower().strip()
+
+            # Check for OR operation (|)
+            if '|' in tag_expr:
+                or_tags = [t.strip() for t in tag_expr_lower.split('|')]
+                or_candidates = set()
+                for or_tag in or_tags:
+                    if or_tag in self.yaml_tags_to_entries:
+                        or_candidates.update(self.yaml_tags_to_entries[or_tag])
+
+                if first_tag:
+                    candidates = or_candidates
+                else:
+                    candidates &= or_candidates
+            else:
+                # Single tag
+                if tag_expr_lower in self.yaml_tags_to_entries:
+                    tag_candidates = set(self.yaml_tags_to_entries[tag_expr_lower])
+                    if first_tag:
+                        candidates = tag_candidates
+                    else:
+                        candidates &= tag_candidates
+                elif first_tag:
+                    return ""  # No match found
+
+            first_tag = False
+
+        if not candidates:
+            return ""
+
+        # Select a random candidate
+        selected_title = random.choice(list(candidates))
+        entry = self.yaml_entries[selected_title]
+
+        # Decide whether to use prompt, prefix, or suffix
+        available_options = []
+        if entry['prompts']:
+            available_options.append('prompt')
+        if entry['prefixes']:
+            available_options.append('prefix')
+        if entry['suffixes']:
+            available_options.append('suffix')
+
+        if not available_options:
+            return ""
+
+        choice_type = random.choice(available_options)
+
+        if choice_type == 'prompt':
+            return random.choice(entry['prompts'])
+        elif choice_type == 'prefix':
+            prefix = random.choice(entry['prefixes'])
+            if prefix:  # Don't add empty prefixes
+                self.current_prefixes.append(prefix)
+            return ""  # Prefix doesn't go in-place
+        elif choice_type == 'suffix':
+            suffix = random.choice(entry['suffixes'])
+            if suffix:  # Don't add empty suffixes
+                self.current_suffixes.append(suffix)
+            return ""  # Suffix doesn't go in-place
+
+        return ""
 
     @classmethod
     def INPUT_TYPES(cls):
@@ -207,12 +343,119 @@ class WildcardNode:
             else:
                 return match.group(0)  # Return original if no lines found
 
-    def process_wildcards(self, text, seed, autorefresh):
+    def process_curly_braces(self, match):
         """
-        Process all wildcards in the input text with recursive support.
+        Process {} randomization like {option1|option2|option3}
+        Supports range syntax like {0-1$$option1|option2}
 
         Args:
-            text: Input text containing wildcards in __filename__ format
+            match: Regex match object
+
+        Returns:
+            str: Selected option(s)
+        """
+        content = match.group(1)
+        options = [opt.strip() for opt in content.split('|')]
+
+        if not options:
+            return ""
+
+        # Check for range syntax
+        if '$$' in options[0]:
+            range_part, first_option = options[0].split('$$', 1)
+            options[0] = first_option.strip()
+
+            try:
+                if '-' in range_part:
+                    parts = range_part.split('-')
+                    low = int(parts[0]) if parts[0] else 0
+                    high = int(parts[1]) if parts[1] else len(options)
+                else:
+                    low = high = int(range_part)
+
+                # Clamp to valid range
+                low = max(0, min(low, len(options)))
+                high = max(0, min(high, len(options)))
+
+                if low > high:
+                    low, high = high, low
+
+                num_items = random.randint(low, high)
+                if num_items == 0:
+                    return ""
+
+                selected = random.sample(options, min(num_items, len(options)))
+                return ", ".join(selected)
+            except (ValueError, Exception) as e:
+                print(f"DuoUmiWild: Error processing range in curly braces: {e}")
+                return random.choice(options)
+        else:
+            # Simple random choice
+            return random.choice(options)
+
+    def process_yaml_tags(self, match):
+        """
+        Process YAML tag selection like <[Tag]> or <[Tag1][Tag2]>
+
+        Args:
+            match: Regex match object
+
+        Returns:
+            str: Selected YAML entry prompt
+        """
+        tags_query = match.group(0)  # Get the full match
+        return self.select_by_tags(tags_query)
+
+    def select_yaml_by_title(self, title):
+        """
+        Select a YAML entry directly by its title (e.g., "a-size", "b-size").
+
+        Args:
+            title: The entry title to look up
+
+        Returns:
+            str: Selected prompt text, or empty string if not found
+        """
+        if title not in self.yaml_entries:
+            return ""
+
+        entry = self.yaml_entries[title]
+
+        # Decide whether to use prompt, prefix, or suffix
+        available_options = []
+        if entry['prompts']:
+            available_options.append('prompt')
+        if entry['prefixes'] and entry['prefixes'] != ['']:
+            available_options.append('prefix')
+        if entry['suffixes'] and entry['suffixes'] != ['']:
+            available_options.append('suffix')
+
+        if not available_options:
+            return ""
+
+        choice_type = random.choice(available_options)
+
+        if choice_type == 'prompt':
+            return random.choice(entry['prompts'])
+        elif choice_type == 'prefix':
+            prefix = random.choice(entry['prefixes'])
+            if prefix:
+                self.current_prefixes.append(prefix)
+            return ""
+        elif choice_type == 'suffix':
+            suffix = random.choice(entry['suffixes'])
+            if suffix:
+                self.current_suffixes.append(suffix)
+            return ""
+
+        return ""
+
+    def process_wildcards(self, text, seed, autorefresh):
+        """
+        Process all wildcards, YAML tags, and {} randomization with recursive support.
+
+        Args:
+            text: Input text containing wildcards, YAML tags, and {} randomization
             seed: Random seed for reproducible results
             autorefresh: Whether to refresh file cache and reload files each time
 
@@ -222,24 +465,47 @@ class WildcardNode:
         # Set random seed for reproducibility
         random.seed(seed)
 
+        # Clear prefix/suffix tracking
+        self.current_prefixes = []
+        self.current_suffixes = []
+
         # Refresh file cache if autorefresh is enabled
         cache_files = (autorefresh == "No")
         if autorefresh == "Yes":
             self.refresh_file_cache()
             self.loaded_tags.clear()
 
-        # Pattern to match __content__ wildcards
-        wildcard_pattern = re.compile(r'__([^_]+(?:_[^_]+)*)__')
+        # Patterns
+        wildcard_pattern = re.compile(r'__([^_]+(?:_[^_]+)*)__')  # __filename__
+        yaml_tag_pattern = re.compile(r'<\[([^\]]+(?:\]\[)?[^\]]*)\]>')  # <[Tag]> or <[Tag1][Tag2]>
+        curly_brace_pattern = re.compile(r'\{([^{}]+)\}')  # {option1|option2}
 
-        # Process wildcards multiple times to handle nested wildcards
+        # Process multiple times to handle nested structures
         max_iterations = 20
         iteration = 0
         previous_text = None
 
         while previous_text != text and iteration < max_iterations:
             previous_text = text
+
+            # Process in order: wildcards, YAML tags, then {} randomization
             text = wildcard_pattern.sub(lambda m: self.process_range_wildcard(m, cache_files), text)
+            text = yaml_tag_pattern.sub(self.process_yaml_tags, text)
+            text = curly_brace_pattern.sub(self.process_curly_braces, text)
+
+            # Also check for direct YAML title references (like "a-size" from {a|b|c}-size)
+            for title in self.yaml_entries.keys():
+                if title in text:
+                    replacement = self.select_yaml_by_title(title)
+                    text = text.replace(title, replacement, 1)  # Replace only first occurrence
+
             iteration += 1
+
+        # Add prefixes and suffixes
+        if self.current_prefixes:
+            text = ", ".join(self.current_prefixes) + ", " + text
+        if self.current_suffixes:
+            text = text + ", " + ", ".join(self.current_suffixes)
 
         # Clean up any extra commas or whitespace
         text = re.sub(r',\s*,', ',', text)  # Remove double commas

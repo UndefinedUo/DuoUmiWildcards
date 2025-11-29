@@ -1,6 +1,6 @@
 # DuoUmiWild - ComfyUI Wildcard Node
 
-A custom node for ComfyUI that randomly feeds wildcards from `.txt` files into your prompts.
+A powerful custom node for ComfyUI that supports wildcards from `.txt` files, advanced YAML-based selections with tags, `{}` randomization, and prefix/suffix injection.
 
 ## Installation
 
@@ -11,7 +11,7 @@ A custom node for ComfyUI that randomly feeds wildcards from `.txt` files into y
 
 2. Clone or copy this repository:
    ```
-   git clone https://github.com/UndefinedUo/DuoUmiWildcards.git
+   git clone https://github.com/yourusername/DuoUmiWild.git
    ```
 
 3. Restart ComfyUI
@@ -125,6 +125,41 @@ __quality__ portrait
 
 Using `__combo__` will expand the wildcards inside!
 
+### YAML Wildcards
+
+DuoUmiWild supports advanced YAML-based wildcards with tag selection and prefix/suffix injection.
+
+**Tag-Based Selection:**
+```
+<[Pose]>              # Select any entry tagged "Pose"
+<[Hat][Fancy]>        # Select entries with BOTH "Hat" AND "Fancy" tags
+<[Hat|Headband]>      # Select entries with "Hat" OR "Headband" tag
+```
+
+**Curly Brace Randomization:**
+```
+{option1|option2|option3}        # Randomly pick one
+{2$$a|b|c|d}                     # Pick exactly 2
+{1-3$$red|blue|green}            # Pick 1 to 3
+```
+
+**Combined Example:**
+```
+girl, {a|b|c|d|e}-size, <[Pose]>, wearing {<[Hat]>|<[Headband]>}
+```
+
+See **[YAML_GUIDE.md](YAML_GUIDE.md)** for complete YAML documentation!
+
+### Curly Brace Randomization
+
+Use `{}` with `|` pipes to randomly select options:
+
+```
+{happy|sad|neutral} expression
+{0-1$$dark skinned female}
+wearing {red|blue|green} dress
+```
+
 ## Node Inputs
 
 - **text**: Your prompt with wildcards in `__filename__` format
@@ -175,6 +210,10 @@ dramatic, moody portrait of elegant woman, oil painting, renaissance style, soft
 - ✅ Inline comment removal
 - ✅ Recursive/nested wildcard support (wildcards within wildcards)
 - ✅ Nested folder organization for wildcard files
+- ✅ **YAML support with tag-based selection** `<[Tag]>`
+- ✅ **YAML Prefix/Suffix random injection**
+- ✅ **Curly brace randomization** `{option1|option2}`
+- ✅ **Combined syntax support** - Mix wildcards, YAML, and `{}`
 - ✅ Text preview display directly in the node
 - ✅ File caching with optional auto-refresh
 - ✅ Automatic comma formatting

@@ -1,5 +1,63 @@
 # Changelog
 
+## v3.0 - YAML Support & Advanced Features
+
+### Major New Features
+
+#### 1. YAML Wildcard Support
+- Load and parse `.yaml` files from wildcards directory
+- Tag-based entry selection using `<[Tag]>` syntax
+- Support for AND logic: `<[Tag1][Tag2]>` (entries with both tags)
+- Support for OR logic: `<[Tag1|Tag2]>` (entries with either tag)
+- Complex tag combinations possible
+
+#### 2. YAML Prefix/Suffix Injection
+- YAML entries can specify Prefix and Suffix options
+- Randomly chooses between using Prompt, Prefix, or Suffix
+- Prefixes are automatically added to the start of the final prompt
+- Suffixes are automatically added to the end of the final prompt
+- Perfect for adding context without cluttering inline prompts
+
+#### 3. Curly Brace Randomization `{}`
+- Use `{option1|option2|option3}` for random selection
+- Range support: `{2$$a|b|c}` selects exactly 2 options
+- Range support: `{1-3$$options}` selects 1 to 3 options
+- Perfect for inline variations and combinations
+
+#### 4. Direct YAML Title References
+- YAML entries can be referenced by exact title
+- Example: `{a|b|c}-size` randomly creates "b-size", which matches YAML entry "b-size"
+- Enables powerful letter-based selection patterns
+- Works seamlessly with curly brace randomization
+
+#### 5. Combined Syntax Support
+- Mix `__wildcards__`, `<[YAML tags]>`, and `{random}` in one prompt
+- All syntax types work together recursively
+- Example: `girl, {a|b|c}-size, <[Pose]>, __lighting__`
+- Processes in order: wildcards → YAML tags → curly braces → YAML titles
+
+### Example YAML Files Added
+- `wildcards/Poses.yaml` - Comprehensive pose library with tags
+- `wildcards/example_yaml.yaml` - Simple demonstration examples
+- `wildcards/breast_sizes.yaml` - Single-letter size references (a-size, b-size, etc.)
+
+### Documentation
+- Added `YAML_GUIDE.md` - Complete YAML feature documentation
+- Updated `README.md` with YAML examples and feature list
+- Updated `EXAMPLES.md` with YAML usage examples
+
+### Technical Changes
+- Added `yaml` import for YAML file parsing
+- Implemented `load_all_yaml_files()` method
+- Implemented `select_by_tags()` for tag-based selection
+- Implemented `select_yaml_by_title()` for direct title lookup
+- Implemented `process_curly_braces()` for `{}` randomization
+- Implemented `process_yaml_tags()` for `<[tag]>` processing
+- Added prefix/suffix tracking and injection
+- Updated main processing loop to handle all syntax types
+
+---
+
 ## v2.0 - Enhanced Features
 
 ### New Features

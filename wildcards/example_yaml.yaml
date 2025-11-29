@@ -1,0 +1,54 @@
+Simple Hat:
+  Prompts:
+    - 'wearing a top hat'
+    - 'wearing a baseball cap'
+    - 'wearing a beanie'
+  Tags:
+    - Hat
+    - Headwear
+  Prefix:
+    -
+  Suffix:
+    -
+
+Fancy Hat:
+  Prompts:
+    - 'wearing an elegant wide-brimmed hat'
+    - 'wearing a fancy fedora'
+  Tags:
+    - Hat
+    - Headwear
+    - Fancy
+  Prefix:
+    - 'dressed elegantly'
+  Suffix:
+    - 'looking sophisticated'
+
+Adventure Outfit:
+  Prompts:
+    - 'wearing explorer outfit with vest and boots'
+    - 'dressed in adventurer gear'
+  Tags:
+    - Outfit
+    - Adventure
+  Prefix:
+    -
+  Suffix:
+    - 'ready for adventure'
+
+Breast Sizes:
+  Prompts:
+    - 'a-cup breasts'
+    - 'b-cup breasts'
+    - 'c-cup breasts'
+    - 'd-cup breasts'
+    - 'e-cup breasts'
+    - 'f-cup breasts'
+    - 'g-cup breasts'
+    - 'h-cup breasts'
+    - 'i-cup breasts'
+    - 'j-cup breasts'
+    - 'k-cup breasts'
+  Tags:
+    - Breast Size
+    - Body
