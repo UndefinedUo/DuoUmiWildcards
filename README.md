@@ -11,7 +11,7 @@ A powerful custom node for ComfyUI that supports wildcards from `.txt` files, ad
 
 2. Clone or copy this repository:
    ```
-   git clone https://github.com/yourusername/DuoUmiWild.git
+   git clone https://github.com/UndefinedUo/DuoUmiWildcards.git
    ```
 
 3. Restart ComfyUI
