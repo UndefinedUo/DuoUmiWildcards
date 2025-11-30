@@ -11,7 +11,7 @@ A powerful custom node for ComfyUI that supports wildcards from `.txt` files, ad
 
 2. Clone or copy this repository:
    ```
-   git clone https://github.com/UndefinedUo/DuoUmiWildcards.git
+   git clone https://github.com/yourusername/DuoUmiWild.git
    ```
 
 3. Restart ComfyUI
@@ -160,18 +160,52 @@ Use `{}` with `|` pipes to randomly select options:
 wearing {red|blue|green} dress
 ```
 
-## Node Inputs
+## Nodes Included
 
-- **text**: Your prompt with wildcards in `__filename__` format
+### 1. Wildcard Prompt Node
+
+The main wildcard processing node.
+
+**Inputs:**
+- **text**: Your prompt with wildcards in `__filename__` format, YAML tags `<[Tag]>`, and `{}` randomization
 - **seed**: Random seed for reproducible wildcard selection (0 to max int)
 - **autorefresh**:
   - **No** (default): Cache wildcard files for faster processing
   - **Yes**: Reload files each time (slower, but see edits immediately)
 
-## Node Outputs
-
+**Outputs:**
 - **processed_text**: Your prompt with all wildcards replaced with random selections
-- **Preview Display**: The node displays the processed text directly in the UI for easy viewing
+- **UI Display**: The node displays the processed text as copyable string in the UI
+
+### 2. Latent Ratio Selector Node
+
+Creates empty latent images with predefined aspect ratios.
+
+**Inputs:**
+- **ratio_selected**: Choose from portrait, landscape, square, or cinematic ratios
+- **batch_size**: Number of latent images (1-64)
+- **randomize**:
+  - **No**: Use the manually selected ratio
+  - **Yes**: Randomly select a ratio (ignores ratio_selected)
+- **randomize_from**: When randomize is Yes, select from:
+  - **All**: Any ratio
+  - **Portrait Only**: Only portrait ratios (2:3, 3:4, 4:5, 9:16)
+  - **Landscape Only**: Only landscape ratios (16:9, 21:9, etc.)
+  - **Square Only**: 1:1 ratio
+- **seed**: Seed for random ratio selection
+
+**Outputs:**
+- **latent**: Empty latent tensor
+- **ratio_used**: String describing which ratio was used
+- **width**: Image width in pixels
+- **height**: Image height in pixels
+
+**Available Ratios:**
+- Portrait: 2:3 (832x1248), 3:4 (880x1176), 4:5 (912x1144), 9:16 (768x1360)
+- Square: 1:1 (1024x1024)
+- Landscape: 4:3 (1176x880), 16:9 (1360x768), 21:9 (1536x640), and more
+- Cinematic: IMAX (1.43:1), Cinemascope (2.35:1), Anamorphic (2.39:1)
+- Special: Golden Ratio (1.618:1)
 
 ## Examples
 
@@ -214,7 +248,9 @@ dramatic, moody portrait of elegant woman, oil painting, renaissance style, soft
 - ✅ **YAML Prefix/Suffix random injection**
 - ✅ **Curly brace randomization** `{option1|option2}`
 - ✅ **Combined syntax support** - Mix wildcards, YAML, and `{}`
-- ✅ Text preview display directly in the node
+- ✅ **Latent ratio selector** with randomization
+- ✅ **17 preset aspect ratios** (portrait, landscape, cinematic)
+- ✅ Text preview as copyable string in the UI
 - ✅ File caching with optional auto-refresh
 - ✅ Automatic comma formatting
 - ✅ Clean output (removes extra commas and whitespace)

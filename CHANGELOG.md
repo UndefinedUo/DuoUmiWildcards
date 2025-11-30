@@ -1,5 +1,51 @@
 # Changelog
 
+## v3.1 - UI Improvements & Ratio Selector
+
+### Changes
+
+#### Text Output Enhancement
+- **Changed**: Text preview now displays as copyable string instead of image
+- Removed PIL/Pillow dependency for preview generation
+- Text appears in UI as selectable/copyable output
+- More lightweight and user-friendly
+
+#### New Node: Latent Ratio Selector
+- Create empty latent images with predefined aspect ratios
+- **17 preset ratios** including portrait, landscape, square, and cinematic
+- **Randomization feature** with category filtering:
+  - Randomize from All ratios
+  - Randomize from Portrait Only
+  - Randomize from Landscape Only
+  - Randomize from Square Only
+- **Seeded randomization** for reproducible results
+- Outputs: latent, ratio description, width, and height
+
+#### Supported Ratios
+- Portrait: 2:3, 3:4, 4:5, 9:16
+- Square: 1:1
+- Landscape: 4:3, 16:9, 21:9, 3:2
+- Cinematic: 1.43:1 (IMAX), 1.66:1 (European), 1.85:1, 2.35:1 (Cinemascope), 2.39:1 (Anamorphic)
+- Special: 1.618:1 (Golden Ratio)
+
+#### File Cleanup & Conversion
+- **Converted**: `corn-flakes-sex-pose.yaml` → `sex-poses-converted.yaml`
+- Removed all "cof" references from file
+- Converted from nested wildcard format to Prompts/Tags/Prefix/Suffix structure
+- **50+ pose entries** organized by tags
+- Added comprehensive tag system for easy selection
+- Created `SEX_POSES_README.md` with usage guide
+- Now fully compatible with `<[Tag]>` selection system
+
+### Technical Changes
+- Removed unused imports: `PIL`, `numpy`, `textwrap`
+- Removed `generate_preview()` method
+- Removed `output_dir` initialization
+- Created new `ratio_selector.py` module
+- Updated `__init__.py` to register both nodes
+
+---
+
 ## v3.0 - YAML Support & Advanced Features
 
 ### Major New Features

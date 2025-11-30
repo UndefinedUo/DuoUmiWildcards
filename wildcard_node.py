@@ -7,10 +7,7 @@ import os
 import random
 import re
 import glob
-import textwrap
 import yaml
-from PIL import Image, ImageDraw, ImageFont
-import numpy as np
 import torch
 import folder_paths
 
@@ -26,9 +23,6 @@ class WildcardNode:
         # Create wildcards directory if it doesn't exist
         if not os.path.exists(self.wildcard_dir):
             os.makedirs(self.wildcard_dir)
-
-        self.output_dir = folder_paths.get_temp_directory()
-        self.type = "temp"
 
         # Cache for loaded wildcard files
         self.loaded_tags = {}
@@ -514,58 +508,8 @@ class WildcardNode:
         text = re.sub(r'\s+', ' ', text)     # Normalize whitespace
         text = text.strip()
 
-        # Generate preview image
-        preview_result = self.generate_preview(text)
-
-        # Return with UI preview
-        return {"ui": {"images": preview_result}, "result": (text,)}
-
-    def generate_preview(self, text):
-        """
-        Generate a preview image of the processed text.
-
-        Args:
-            text: The processed text to display
-
-        Returns:
-            list: Preview image info for ComfyUI UI
-        """
-        img_width = 800
-        font_size = 24
-        margin = 20
-        bg_color = (30, 30, 30)
-        text_color = (230, 230, 230)
-
-        try:
-            font = ImageFont.truetype("arial.ttf", font_size)
-        except IOError:
-            try:
-                # Try alternative font paths
-                font = ImageFont.truetype("Arial.ttf", font_size)
-            except IOError:
-                font = ImageFont.load_default()
-
-        char_width = font_size * 0.55
-        chars_per_line = int((img_width - (2 * margin)) / char_width)
-        lines = textwrap.wrap(text, width=chars_per_line)
-
-        line_height = font_size + 8
-        text_block_height = len(lines) * line_height
-        img_height = text_block_height + (margin * 2)
-
-        img = Image.new('RGB', (img_width, img_height), color=bg_color)
-        draw = ImageDraw.Draw(img)
-
-        y_text = margin
-        for line in lines:
-            draw.text((margin, y_text), line, font=font, fill=text_color)
-            y_text += line_height
-
-        filename = f"wildcard_preview_{random.randint(0, 1000000)}.png"
-        full_path = os.path.join(self.output_dir, filename)
-        img.save(full_path)
-
-        return [{"filename": filename, "subfolder": "", "type": "temp"}]
+        # Return with UI text display
+        return {"ui": {"text": [text]}, "result": (text,)}
 
 
 # Node registration for ComfyUI
